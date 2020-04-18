@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .title-container {
   display: flex;
   justify-content: center;
@@ -11,8 +17,10 @@
 .todoList {
   background: #FFF;
   box-shadow: 0px 3px 10px rgba(29, 21, 21, 0.1);
+  width: 500px;
 }
 .todoListTitle {
+  font-size: 20px;
   font-weight: bold;
   color: #027ec3;
   padding: 20px 15px;

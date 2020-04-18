@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import './style/style.css';
-import TodoItem from './todoItem';
+import '../../style/style.css';
+import TodoItem from '../ReactTodo/todoItem';
 import axios from 'axios';
 
 class App extends Component {

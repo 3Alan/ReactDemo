@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import './style/todoItem.css'
+import '../../style/todoItem.css'
 
 class TodoItem extends Component {
   constructor(props) {
