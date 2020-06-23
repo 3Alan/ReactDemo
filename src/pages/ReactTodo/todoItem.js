@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import '../../style/todoItem.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import '../../style/todoItem.css';
 
 class TodoItem extends Component {
   constructor(props) {
@@ -9,11 +9,11 @@ class TodoItem extends Component {
   }
 
   componentWillReceiveProps() {
-    console.log("%cchild---------componentWillReceiveProps", "color:red");
+    console.log('%cchild---------componentWillReceiveProps', 'color:red');
   }
 
   componentWillUnmount() {
-    console.log("%cchild---------componentWillUnmount", "color:red");
+    console.log('%cchild---------componentWillUnmount', 'color:red');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -22,7 +22,7 @@ class TodoItem extends Component {
   }
 
   render() {
-    console.log("%cchild---------render", "color:red");
+    console.log('%cchild---------render', 'color:red');
 
     return (
       <div className="todoItem" onClick={this.handleClick}>
@@ -42,7 +42,7 @@ TodoItem.propTypes = {
 };
 
 TodoItem.defaultProps = {
-  status: "未完成",
+  status: '未完成',
 };
 
 export default TodoItem;

@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import { Link, Route, Redirect } from "react-router-dom";
-import AntdRedux from "./antdRedux/antdRedux";
-import ReactTodo from "./ReactTodo/todoHeader";
-import Article from "./Article/article";
-import LifeCycle from "./lifeCycle";
-import ArticleContent from "./Article/articleContent";
+import React, { Component } from 'react';
+import { Link, Route, Redirect } from 'react-router-dom';
+import AntdRedux from './antdRedux/antdRedux';
+import ReactTodo from './ReactTodo/todoHeader';
+import Article from './Article/article';
+import LifeCycle from './lifeCycle';
+import ArticleContent from './Article/articleContent';
 
-import { Menu } from "antd";
+import { Menu } from 'antd';
 
 class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      current: "antd",
+      current: 'antd',
     };
   }
   render() {
     return (
-      <div>
+      <>
         {/* 重定向到antdRedux页面 */}
-        <Redirect to="/antdRedux/"/>
+        <Redirect to="/antdRedux/" />
         <Menu
           onClick={this.selectMenu.bind(this)}
           mode="horizontal"
@@ -49,7 +49,7 @@ class Index extends Component {
           path="/article/:articleContent"
           component={ArticleContent}
         ></Route>
-      </div>
+      </>
     );
   }
   selectMenu(e) {

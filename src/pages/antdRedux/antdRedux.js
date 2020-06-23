@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import store from "../../store";
+import React, { Component } from 'react';
+import store from '../../store';
 import {
   changeInputAction,
   addTodoAction,
   deleteTodoItemAction,
   getTodoList,
-} from "../../store/actionCreators";
-import AntdReduxUi from "./antdReduxUi";
-import { connect } from "react-redux";
+  getSaga,
+} from '../../store/actionCreators';
+import AntdReduxUi from './antdReduxUi';
+import { connect } from 'react-redux';
 
 class AntdDemo extends Component {
   constructor(props) {
@@ -17,7 +18,13 @@ class AntdDemo extends Component {
     // store.subscribe(this.storeChange);
   }
   render() {
-    const { addTodo, todoText, todoList, deleteTodoItem, inputChange } = this.props;
+    const {
+      addTodo,
+      todoText,
+      todoList,
+      deleteTodoItem,
+      inputChange,
+    } = this.props;
     return (
       <AntdReduxUi
         addTodo={addTodo}
@@ -28,8 +35,14 @@ class AntdDemo extends Component {
       />
     );
   }
+  // redux-thunk
+  // componentDidMount() {
+  //   const action = getTodoList();
+  //   store.dispatch(action);
+  // }
+  // redux-saga
   componentDidMount() {
-    const action = getTodoList();
+    const action = getSaga();
     store.dispatch(action);
   }
   // storeChange() {
@@ -37,7 +50,7 @@ class AntdDemo extends Component {
   // }
 }
 const mapStateToProps = (state) => ({
-  ...state
+  ...state,
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -53,7 +66,7 @@ const mapDispatchToProps = (dispatch) => {
     inputChange(e) {
       const action = changeInputAction(e.target.value);
       store.dispatch(action);
-    }
+    },
   };
 };
 
